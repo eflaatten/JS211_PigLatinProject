@@ -14,14 +14,23 @@ const rl = readline.createInterface({
 const pigLatin = (word) => {
 
   // Your code here
-
+  word = word.toLowerCase().trim()
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  for(let i = 0; i < word.length; i++){
+    if(vowels.includes(word[i])){
+      return word.slice(i) + word.slice(0, i) + 'ay' 
+    } else if (vowels.includes(word[i])) {
+      return word + 'yay'
+    }
+  }
+  return word
 }
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
 // to close it ctrl + C
 const getPrompt = () => {
-  rl.question('word ', (answer) => {
+  rl.question('word: ', (answer) => {
     console.log( pigLatin(answer) );
     getPrompt();
   });
