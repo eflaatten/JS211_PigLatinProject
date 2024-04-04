@@ -29,6 +29,13 @@ const pigLatin = (word) => {
   return word
 }
 
+
+const translatePigLatin = () => {
+  let userInput = document.getElementById('user-input').value
+  let translatedWord = pigLatin(userInput)
+  document.getElementById('display-element').innerHTML = translatedWord
+}
+
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
 // to close it ctrl + C
